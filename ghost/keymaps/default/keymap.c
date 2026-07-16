@@ -4,20 +4,7 @@
 #include QMK_KEYBOARD_H
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-     /*
-      * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │Tab│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │Bsp│
-      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Ctl│ A │ S │ D │ F │ G │       │ H │ J │ K │ L │ ; │ ' │
-      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Sft│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │Sft│
-      * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
-      *               ┌───┐                   ┌───┐
-      *               │GUI├───┐           ┌───┤Alt│
-      *               └───┤Bsp├───┐   ┌───┤Ent├───┘
-      *                   └───┤   │   │   ├───┘
-      *                       └───┘   └───┘
-      */
+
     [0] = LAYOUT(
 
         // Left half (30 keys)
@@ -25,30 +12,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,
         KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,
-        KC_LCTL, KC_LGUI, KC_LALT, KC_LBRC, KC_SPC,  MO(1),
+        KC_LCTL, KC_LGUI, KC_LALT, KC_LBRC, KC_BSPC,  MO(1),
 
         // Right half (30 keys)
         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-        MO(1),  KC_SPC, KC_RBRC, KC_RALT,   KC_MENU, KC_RCTL
+        MO(1),   KC_SPC,  KC_RBRC, KC_MINS, KC_EQL,  KC_MENU
     ),
 
     [1] = LAYOUT(
 
         // Left half
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
-        KC_GRV,  _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, KC_DEL,  _______,
+        KC_GRV,  KC_Q,    KC_W,    KC_UP,   KC_R,    KC_T,
+        KC_CAPS, KC_A,    KC_LEFT, KC_DOWN, KC_RGHT, KC_G,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,
+        KC_RCTL, KC_LGUI, KC_RALT, KC_LBRC, KC_DEL,  _______,
 
         // Right half
         KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-        _______, _______, KC_PSCR, KC_SCRL, KC_PAUS, _______,
-        _______, _______, KC_INS,  KC_HOME, KC_PGUP, _______,
-        _______, _______, KC_DEL,  KC_END,  KC_PGDN, _______,
-        _______, KC_ENT,  KC_MINS, KC_EQL,  _______, _______
+        KC_Y,    KC_U,    KC_PSCR, KC_SCRL, KC_PAUS, KC_BSLS,
+        KC_H,    KC_J,    KC_INS,  KC_HOME, KC_PGUP, KC_QUOT,
+        KC_N,    KC_M,    KC_DEL,  KC_END,  KC_PGDN, KC_RSFT,
+        _______, KC_ENT,  KC_RBRC, KC_MINS, KC_EQL,  KC_MENU
     )
 };
